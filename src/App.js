@@ -13,6 +13,18 @@ export default function App() {
     </>
   );
 }
+
+function Pittza(props) {
+  console.log(props);
+  return (
+    <div>
+      <img src={focaccia} alt={"focaccia"} />
+      <h3>Focaccia</h3>
+      <p>Bread with italian olive oil</p>
+    </div>
+  );
+}
+
 function Header() {
   return (
     <div className={"header"}>
@@ -26,7 +38,12 @@ function Menu() {
     <>
       <div className={"menu"}>
         <h2>Our Menu</h2>
-        <img src={focaccia} alt={"focaccia"} />
+        <Pittza
+          name="focaccia"
+          ingredients="Bread with italian olive oil"
+          photoname="focaccia"
+          price="10"
+        />
       </div>
     </>
   );
