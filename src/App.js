@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import focaccia from "./pizzas/focaccia.jpg";
+import "./index.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+      <div className="container">
+        <Header />
+        <Menu />
+        <Footer />
+      </div>
+    </>
+  );
+}
+function Header() {
+  return (
+    <div className={"header"}>
+      <h1>Fast React Pittza .co</h1>
     </div>
   );
 }
 
-export default App;
+function Menu() {
+  return (
+    <>
+      <div className={"menu"}>
+        <h2>Our Menu</h2>
+        <img src={focaccia} alt={"focaccia"} />
+      </div>
+    </>
+  );
+}
+
+function Footer() {
+  const hour = new Date().getHours();
+  console.log(hour);
+  return (
+    <div className={"footer"}>
+      <p>{new Date().toLocaleDateString()}. We Currinety Open </p>
+    </div>
+  );
+}
